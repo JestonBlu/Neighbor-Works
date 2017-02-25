@@ -32,7 +32,9 @@ delta_k   -> 1,2   (safety day rating: medium, high)
 tau_l     -> 1,2,3 (Own/Rent: other, own, rent)
 e_{ijklm} -> model error N(0, \sigma^2)
 ```
-log(Years) Model
+
+**log(Years) Model**
+
 | Variable              | Order Removed | P-Value at Removal |
 |:----------------------|:--------------|:-------------------|
 | RecommendCat          | 1             | .844               |
@@ -64,6 +66,7 @@ e_{ijkl} -> model error N(0, \sigma^2)
 ```
 
 **Years Model**
+
 | Variable              | Order Removed | P-Value at Removal |
 |:----------------------|:--------------|:-------------------|
 | SatLevelCat           | 1             | .914               |
@@ -99,6 +102,7 @@ e_{ijkl} -> model error N(0, \sigma^2)
 ```
 
 **log(Age) Model**
+
 | Variable              | Order Removed | P-Value at Removal |
 |:----------------------|:--------------|:-------------------|
 | NeighborhoodID        | 1             | .956               |
@@ -113,6 +117,7 @@ e_{ijkl} -> model error N(0, \sigma^2)
 | OwnRent               | 10            | .054               |
 
 **Age Model**
+
 | Variable              | Order Removed | P-Value at Removal |
 |:----------------------|:--------------|:-------------------|
 | NeighborhoodID        | 1             | .864               |
