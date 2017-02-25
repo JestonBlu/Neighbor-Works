@@ -32,7 +32,7 @@ delta_k   -> 1,2   (safety day rating: medium, high)
 tau_l     -> 1,2,3 (Own/Rent: other, own, rent)
 e_{ijklm} -> model error N(0, \sigma^2)
 ```
-
+log(Years) Model
 | Variable              | Order Removed | P-Value at Removal |
 |:----------------------|:--------------|:-------------------|
 | RecommendCat          | 1             | .844               |
@@ -64,7 +64,6 @@ e_{ijkl} -> model error N(0, \sigma^2)
 ```
 
 **Years Model**
-
 | Variable              | Order Removed | P-Value at Removal |
 |:----------------------|:--------------|:-------------------|
 | SatLevelCat           | 1             | .914               |
@@ -84,7 +83,7 @@ e_{ijkl} -> model error N(0, \sigma^2)
 
 The log(age) and age models ended up being the same so Im only writing it once, but i included the table of which variables were removed because the order was different.
 
-**log(Age) Model**: log(Age) ~ Years + TrashRatingCat + FeelSafeNightCat
+**Age Model**: (Age or log(Age)) ~ Years + TrashRatingCat + FeelSafeNightCat
 
 
 **Latex version**
@@ -99,7 +98,7 @@ gamma_j  -> 1,2,3 (safety night rating: medium, high)
 e_{ijkl} -> model error N(0, \sigma^2)
 ```
 
-
+**log(Age) Model**
 | Variable              | Order Removed | P-Value at Removal |
 |:----------------------|:--------------|:-------------------|
 | NeighborhoodID        | 1             | .956               |
@@ -113,7 +112,7 @@ e_{ijkl} -> model error N(0, \sigma^2)
 | Race                  | 9             | .081               |
 | OwnRent               | 10            | .054               |
 
-
+**Age Model**
 | Variable              | Order Removed | P-Value at Removal |
 |:----------------------|:--------------|:-------------------|
 | NeighborhoodID        | 1             | .864               |
