@@ -2,26 +2,18 @@ libname dta '\\arpdnas01.nas.cat.com\userdata04\blubaj';
 
 data dta;
 set dta.ReducedData;
+Years_log = log(Years_Adj);
 run;
-
-
-* Full Model;
-proc mixed;
-class Neighborhood_ID SatLevelCat RecommendCat ParticipationScoreCat 
-	  PoliceRatingCat TrashRatingCat SnowRemovalCat FeelSafeDayCat 
-	  FeelSafeNightCat OwnRent Gender Race;
-model Years_Adj = Neighborhood_ID SatLevelCat RecommendCat ParticipationScoreCat 
-	  PoliceRatingCat TrashRatingCat SnowRemovalCat FeelSafeDayCat FeelSafeNightCat 
-	  OwnRent Gender Race Age;
-run;
-
-/* Didnt include all of the code for removing the variables on by one */
 
 * Final Model;
 proc mixed data=dta covtest;
-class PoliceRatingCat FeelSafeDayCat OwnRent;
-model Years_Adj = PoliceRatingCat FeelSafeDayCat OwnRent Age Age*OwnRent / CL DDFM=KR solution;
-lsmeans PoliceRatingCat FeelSafeDayCat OwnRent / adjust=tukey diff;
+class PoliceRatingCat FeelSafeDayCat OwnRent Neighborhood_id TrashRatingCat;
+model Years_log = Age OwnRent PoliceRatingCat FeelSafeDayCat TrashRatingCat Neighborhood_ID / CL DDFM=KR solution;
+lsmeans PoliceRatingCat FeelSafeDayCat OwnRent Neighborhood_ID / adjust=tukey diff;
+contrast 'Neighborhood 1,2,3 vs 4' neighborhood_id -1 -1 -1  3;
+contrast 'Neighborhood 1,2,4 vs 3' neighborhood_id -1 -1  3 -1;
+contrast 'Neighborhood 1,3,4 vs 2' neighborhood_id -1  3 -1 -1;
+contrast 'Neighborhood 2,3,4 vs 1' neighborhood_id  3 -1 -1 -1;
 run;
 
 /* Regression Plots */
