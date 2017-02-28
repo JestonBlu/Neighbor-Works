@@ -1,21 +1,25 @@
-**Transformed Data**
-
-| ID | Neighborhood | Years | Satisfaction   | Recommendation | Participation | Police Rating | Fire Rating | EMS Rating | Trash Rating | Snow Remova | Safety Day | Safety Night | Own/Rent | Age             | Gender                 | Race                   |
-|:---|:-------------|:------|:---------------|:---------------|:--------------|:--------------|:------------|:-----------|:-------------|:------------|:-----------|:-------------|:---------|:----------------|:-----------------------|:-----------------------|
-| 1  | 1            | 33    | Very Satisfied | Very Likely    | High          | Medium        | High        | High       | High         | High        | High       | High         | Rent     | 33              | Female                 | Caucasian/White        |
-| 2  | 1            | 5     | Satisfied      | Likely         | High          | Medium        | High        | High       | High         | Low         | High       | Low          | Rent     | 59              | Female                 |                        |
-| 3  | 1            | 17    | Very Satisfied | Very Likely    | High          | High          | High        | High       | High         | High        | High       | Own          | 62       | Female          | Caucasian/White        |                        |
-| 4  | 1            | 5     | Very Satisfied | Likely         | High          | High          | High        | High       | High         | High        | High       | High         | Rent     | 50              | Black/African American |                        |
-| 5  | 1            | 6     | Very Satisfied | Very Likely    | High          | High          | High        | High       | High         | High        | High       | High         | Rent     | 57              | Female                 | Black/African American |
-| 6  | 1            | 5     | Dissatisfied   | Not Likely     | Medium        | Medium        | Medium      | Medium     | High         | High        | Low        | Low          | Other    | 74              | Female                 | Black/African American |
-| 7  | 1            | 6     | Satisfied      | Likely         | Medium        | High          | High        | High       | High         | Medium      | High       | High         | Rent     | 43              | Male                   | Black/African American |
-| 8  | 1            | 25    | Very Satisfied | Very Likely    | High          | High          | High        | High       | High         | High        | High       | Own          | 51       | Female          | Caucasian/White        |                        |
-| 9  | 1            | 27    | Very Satisfied | Very Likely    | Medium        | High          | High        | High       | High         | Medium      | High       | High         | Own      | 53              | Male                   | Caucasian/White        |
-| 10 | 1            | 61    | Satisfied      | Not Likely     | Medium        | High          | High        | Medium     | High         | High        | Own        | 80           | Male     | Caucasian/White |                        |                        |
-| 11 | 1            | 26    | Very Satisfied | Very Likely    | Medium        | High          | High        | High       | Low          | High        | High       | Own          | 48       | Female          |                        |                        |
-| 12 | 1            | 11    | Very Satisfied | Likely         | Medium        | High          | High        | High       | High         | High        | High       | High         | Own      | 74              | Male                   |                        |
+**Current Best Model**
 
 
+**log(years) Final Model**: log(years) ~ Age + OwnRent + PoliceRating + FeelSafeDay + TrashRating + NeighborhoodID
+
+**Latex version**
+$y_{ijklmn} = \beta_0 + \beta_1(a) + \alpha_i + \gamma_j + \delta_k + \tau_l + \theta_m + e_{ijklmn}$
+
+```
+beta_0    -> overall mean
+beta_1    -> age coefficient
+a         -> age value
+alpha_i   -> 1,2,3   (police rating: low, medium, high)
+gamma_j   -> 1,2,3   (trash rating: low, medium, high)
+delta_k   -> 1,2     (safety day rating: medium, high)
+tau_l     -> 1,2,3   (Own/Rent: other, own, rent)
+theta     -> 1,2,3,4 (Neighborhood)
+
+e_{ijklm} -> model error N(0, \sigma^2)
+```
+
+------------------------------------
 
 **log(years) Final Model**: log(years) ~ Age + OwnRent + PoliceRatingCat + FeelSafeDayCat + TrashRatingCat
 
