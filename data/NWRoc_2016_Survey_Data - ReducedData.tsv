@@ -1,0 +1,203 @@
+HHID	Neighborhood ID	Years_adj	SatLevelCat	RecommendCat	ParticipationScoreCat	PoliceRatingCat	FireRatingCat	EMSRatingCat	TrashRatingCat	SnowRemovalCat	FeelSafeDayCat	FeelSafeNightCat	OwnRent	Age	Gender	Race
+1	1	33	Very Satisfied	Very Likely	High	Medium	High	High	High	High	High	High	Rent	33	Female	Caucasian/White
+2	1	5	Satisfied	Likely	High	Medium	High	High	High	Low	High	Low	Rent	59	Female	
+3	1	17	Very Satisfied	Very Likely	High		High	High	High	High	High	High	Own	62	Female	Caucasian/White
+4	1	5	Very Satisfied	Likely	High	High	High	High	High	High	High	High	Rent	50		Black/African American
+5	1	6	Very Satisfied	Very Likely	High	High	High	High	High	High	High	High	Rent	57	Female	Black/African American
+6	1	5	Dissatisfied	Not Likely	Medium	Medium	Medium	Medium	High	High	Low	Low	Other	74	Female	Black/African American
+7	1	6	Satisfied	Likely	Medium	High	High	High	High	Medium	High	High	Rent	43	Male	Black/African American
+8	1	25	Very Satisfied	Very Likely	High	High	High	High		High	High	High	Own	51	Female	Caucasian/White
+9	1	27	Very Satisfied	Very Likely	Medium	High	High	High	High	Medium	High	High	Own	53	Male	Caucasian/White
+10	1	61	Satisfied	Not Likely	Medium			High	High	Medium	High	High	Own	80	Male	Caucasian/White
+11	1	26	Very Satisfied	Very Likely	Medium	High	High		High	Low	High	High	Own	48	Female	
+12	1	11	Very Satisfied	Likely	Medium	High	High	High	High	High	High	High	Own	74	Male	
+13	1	27	Satisfied	Very Likely	High		High	High	High	High	High	High	Own	57	Male	Black/African American
+14	1	7	Very Satisfied	Likely	Low	Medium			High	High	High	High	Rent	53	Male	Black/African American
+15	1	7	Dissatisfied	Not Likely	Medium	Low	High	High	High	High	High	Low	Own	34	Male	
+16	1	5	Very Satisfied	Very Likely	High	High	Medium	Medium	High	High	High	High	Own	34	Male	
+17	1	9.416666667	Satisfied	Likely	Medium	Medium	High	High	High		High	Low	Own	55	Female	Black/African American
+18	1	4	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Rent	49	Male	Black/African American
+19	1	1.5	Very Satisfied	Very Likely	Medium				High	Low	High	High	Rent	35	Female	
+20	1	3	Satisfied	Very Likely	Low	High			High	Low	High	Low	Rent	54	Female	Other
+21	1	16	Very Satisfied	Very Likely	Low	High			High	High	High	High	Own	60	Male	
+22	1	4	Satisfied	Likely	Medium	Medium			High	High	High	Low	Rent	37	Male	Caucasian/White
+23	1	9	Satisfied	Not Likely	Low	High	High	High	High	Medium	High	Low	Rent	64	Male	
+24	1	11	Very Satisfied	Very Likely	High	High	High	High	High	High	High	Low	Rent	36	Male	Caucasian/White
+25	1	21	Satisfied	Likely	Medium	High	High	High	High	High	High	High	Own	61	Female	Black/African American
+26	1	65	Satisfied	Very Likely	Low	Low	High	High	High	High	High	Low	Own	84	Female	Caucasian/White
+27	1	11	Satisfied	Likely	Medium	Medium	High	High	High	High	High	High	Other	23	Female	Other
+28	1	11	Very Satisfied	Very Likely	Medium	Low	High	Low	High	Low	High	High	Own	25	Male	Black/African American
+29	1	11	Very Satisfied	Very Likely	Medium	High	High	High	High	Medium	High	High	Own	44	Female	Black/African American
+30	1	7	Very Satisfied	Very Likely	Low	High			High	Low	High	High	Rent	35	Female	Black/African American
+31	1	17	Satisfied	Not Likely	Medium	High	High	High	High	Medium	High	Low	Own	65	Female	Caucasian/White
+32	1	7	Satisfied	Likely	Low	Medium	Medium	Medium	High	Low	High	High	Own	54	Female	Other
+33	1	5	Satisfied	Very Likely	Medium	High			High	High	High	High	Rent	62	Female	Other
+34	1	3	Satisfied	Likely	Low	High	High	High	High	High	High	High	Rent	32	Female	Black/African American
+35	1	6	Very Satisfied	Very Likely	Medium	High			High	Low	High	High	Own	29	Male	Caucasian/White
+36	1	3	Very Satisfied	Very Likely	Medium				High	High	High	High	Own	53	Female	Caucasian/White
+37	1	5	Satisfied	Very Likely	Medium	High	High	High	High	Medium	High	Low	Own		Female	Black/African American
+38	1	32.08333333	Satisfied	Likely	Medium			High	High	High	High	Low	Own	66	Female	Caucasian/White
+39	1	1.083333333	Very Satisfied	Likely							High	High		79	Female	Caucasian/White
+40	1	5	Satisfied	Likely	Medium	High			High	High	High	Low	Own	64	Female	Caucasian/White
+41	1	59	Very Satisfied	Very Likely	High	Medium	High	High	High	High	High	Low	Own	85	Female	Caucasian/White
+42	2	22	Satisfied	Not Likely	Medium	Medium	High		High	Low	High	Low	Own	55	Female	Caucasian/White
+43	2	11		Not Likely	Medium	High	High	High	High	Medium	High	High	Own	45	Male	Black/African American
+44	2	37.83333333	Very Satisfied	Likely	Low	High	High	High	High	Medium	High	High	Own	64	Female	Caucasian/White
+45	2	13	Satisfied	Likely	Medium	High	High	High	High	Low	High	High	Own	35	Female	Caucasian/White
+46	2	11	Very Satisfied	Likely	Medium	Medium	High		High	Medium	High	High	Own	34	Female	Caucasian/White
+47	2	17	Very Satisfied	Very Likely	Medium	High	High	High	High	Medium	High	High	Own	54	Female	Caucasian/White
+48	2	35	Dissatisfied	Likely		High	High	High	High		High	Low	Own		Female	Other
+49	2	41	Very Satisfied	Very Likely	Medium	Low	High	Medium	High	High	High	High	Own	67	Female	Black/African American
+50	2	4	Very Satisfied	Very Likely	Low	High	High	High	High	High						
+51	2	16	Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Own	46	Female	Caucasian/White
+52	2	36	Very Satisfied	Very Likely	Medium	Medium	High	High	High	High	High	High	Own	36	Female	Caucasian/White
+53	2	3.416666667	Dissatisfied	Not Likely	Medium	Low	Medium	Medium	High	Low	Low	Low	Rent	28	Male	Caucasian/White
+54	2	6	Very Satisfied	Very Likely	Low	Medium			High	High	High	High	Rent	50	Male	Other
+55	2	3	Satisfied	Very Likely	Medium	High		High	High	High	High	High	Own	50		
+56	2	5	Satisfied	Likely	Medium	Medium	High	High	High	High	High	High	Own		Male	Caucasian/White
+57	2	4	Satisfied	Likely	Low	High			High	Low	High	Low	Own	37	Female	Caucasian/White
+58	2	17	Satisfied	Likely	Medium	Medium			High	Medium	High	Low	Own	68	Female	Other
+59	2	9	Very Satisfied	Likely	Low				High	High	High	High	Own	68	Male	Black/African American
+60	2	1.333333333	Satisfied	Likely	Low	Medium	Medium	Medium	Medium	Medium	High	High	Rent		Female	Black/African American
+61	2	31	Very Satisfied	Very Likely	Low	Medium	High		High	Low	High	Low	Own	72	Female	Black/African American
+62	2	8	Satisfied	Very Likely	Low		High		High	High	High	High	Own	45	Female	Black/African American
+63	2	5	Dissatisfied	Not Likely	Medium	Low			Medium	Low	Low	Low	Own	43	Male	Caucasian/White
+64	2	9	Satisfied	Very Likely	Low	High			High	High	High	High	Rent	26	Female	Caucasian/White
+65	2	21	Satisfied	Likely	Low	Low			High	Medium	High	High	Own	57	Male	Caucasian/White
+66	2	11	Very Satisfied	Very Likely	High	High	High	High	High	Medium	High	High	Own	60	Female	Caucasian/White
+67	2	14	Very Satisfied	Likely	Low				High	Low	High	High	Rent	46	Male	Caucasian/White
+68	2	6		Not Likely	Medium	Medium	Medium	Medium	High	High	High	Low	Rent	44	Female	Caucasian/White
+69	2	2.833333333	Very Satisfied	Likely	Low	High			High		High	High	Rent	28	Female	Caucasian/White
+70	2	15.08333333	Satisfied	Likely	Medium	High			High	Low	High	High	Own	41	Male	Caucasian/White
+71	2	5	Satisfied	Very Likely	Medium	Low	High		High	Low	High	Low	Own	30	Male	Caucasian/White
+72	2	36	Very Satisfied	Likely	Medium	High	High	High	High	Low	High	Low	Own	72	Female	Caucasian/White
+73	2	24	Satisfied	Likely	High	Medium	High	High	High	High	High	High	Own	49	Male	Black/African American
+74	2	9	Very Satisfied	Likely	Low	High	High	High	High	High	High	High	Own	37	Male	Caucasian/White
+75	2	26	Very Satisfied	Very Likely	Low	Low	High	High	High	Medium	High	High	Own	68	Female	Caucasian/White
+76	2	9	Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Own	30	Male	Caucasian/White
+77	2	26	Very Satisfied	Very Likely	High	High	High	High	High	High	High	High	Own	59	Male	Caucasian/White
+78	2	21	Very Satisfied	Very Likely	High	High	High	High	High	High	High	High	Rent	57	Female	Caucasian/White
+79	2	24	Very Satisfied	Very Likely	Medium				High	Medium	High	High	Rent	24	Female	Caucasian/White
+80	2	44	Satisfied	Likely	Medium	High	High	High	High	High	High	High	Own	44	Male	Caucasian/White
+81	2	8	Very Satisfied		Low	High	High	High	High	Medium	High	High	Own	55	Female	Black/African American
+82	2	71	Satisfied	Likely	Low	High	High	High	High	Medium	High	Low	Own	73	Female	Caucasian/White
+83	2	5	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Rent			
+84	2	6.166666667	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Rent	53	Male	Black/African American
+85	2	7	Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Rent	41	Female	Caucasian/White
+86	2	19	Dissatisfied	Likely	Medium	High	High	High	High	Low	High	Low	Own	57	Male	Caucasian/White
+87	2	29	Satisfied	Likely	Medium	Medium	High	High	High	Medium	High	Low	Own	50	Male	Caucasian/White
+88	2	36	Satisfied	Likely	High	Medium	Medium	Medium	High	Low	High	High	Own	40		Other
+89	2	16	Satisfied	Very Likely	Low	High			High	Low	High	High	Own	48	Male	Black/African American
+90	2	9	Very Satisfied	Likely	Low	Medium			High	Low	High	High	Own	40	Male	Caucasian/White
+91	2	12	Very Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Rent	68	Male	Caucasian/White
+92	2	1.5	Very Satisfied	Likely	Low	High	High	High	High	Medium	High	High	Rent	27		Black/African American
+93	2	41	Very Satisfied	Very Likely	Low	Low	High	Medium	High	High	High	High	Rent	61	Male	Caucasian/White
+94	2	4.416666667	Very Satisfied	Very Likely	High	High	High	High	High	High	High	High	Rent		Male	Black/African American
+95	2	2	Satisfied	Very Likely	Low		High		High	Low	High	High	Rent	36	Female	Other
+96	2	41	Very Satisfied	Very Likely	Medium	Medium	High	High	High	Medium	High	High	Own	70	Female	Other
+97	2	3	Satisfied	Likely	Low	Medium	Medium	Medium	Medium		High	High	Rent	15	Male	Black/African American
+98	2	1	Satisfied	Very Likely	Low	High	High	High	High	Low	High	High	Own	78	Male	Caucasian/White
+99	2	3.5	Dissatisfied	Not Likely	High	High	High	High	High	Medium	High	Low	Own	26	Female	
+100	2	8	Satisfied	Likely	Medium	High			High	High	High	Low	Own	36	Female	Other
+101	2	9	Very Satisfied	Very Likely	High	High	High	High	High	High	High	High	Own	35	Male	Caucasian/White
+102	2	16	Very Satisfied	Very Likely	Medium	High	High	High	High	Medium	High	Low	Own		Female	Black/African American
+103	2	16	Very Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Own	58	Male	Caucasian/White
+104	2	10	Satisfied	Likely	Low	Medium	High	High	High		High	High	Own	34	Female	Caucasian/White
+105	2	6	Very Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Own	38	Female	Caucasian/White
+106	2	2.5	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Rent	24	Female	Black/African American
+107	2	7	Satisfied	Likely	Low	High			High	Low	High	High	Own	31	Male	Caucasian/White
+108	2	21	Dissatisfied	Not Likely	Medium	Low	High	High	Low	High	High	Low	Rent	20	Female	Caucasian/White
+109	2	9	Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Own	36	Male	Caucasian/White
+110	2	1.5	Very Satisfied	Very Likely	Low	High	High	High	High		High	High	Rent	28	Male	Caucasian/White
+111	2	11	Very Satisfied	Very Likely	High	Medium	High	High	High	Low	High	High	Own	53	Female	Caucasian/White
+112	2	10	Very Satisfied	Very Likely	High	High	High	Medium	High	Low	High	High	Rent	49	Female	Caucasian/White
+113	3	21	Satisfied	Very Likely	Low	Low	High	High	High		High	High	Own	60	Female	Black/African American
+114	3	11	Very Satisfied	Very Likely	Medium	High	High	High	High	Medium	High	High	Own	53	Male	Caucasian/White
+115	3	31	Satisfied	Not Likely	Medium	Medium	High	High	High	Low	High	High	Own	49	Male	Caucasian/White
+116	3	3.5	Very Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Own	28	Female	Caucasian/White
+117	3	22	Satisfied	Likely	High	High			Medium	High	High	High	Own	51	Female	Black/African American
+118	3	9	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Own	60	Male	Caucasian/White
+119	3	4.5	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Own	28		
+120	3	21	Very Satisfied	Very Likely	Low	High	High	High	High	High	High	Low	Own	74	Female	
+121	3	26	Satisfied	Likely	Medium	High		High	High	Medium	High	High	Own	57	Male	Caucasian/White
+122	3	9	Very Satisfied	Very Likely	Medium	High	High	High	High	Medium	High	High	Own	38	Male	Other
+123	3	2.5	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Other	41	Male	Other
+124	3	11	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Rent	33	Male	Black/African American
+125	3	4.5	Very Satisfied	Very Likely		Medium			High	Low	High	High	Own		Male	Other
+126	3	47	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Own	64	Female	Caucasian/White
+127	3	8	Very Satisfied	Very Likely	Low	High	High	High	High		High	High	Own	32	Male	Caucasian/White
+128	3	12	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	Low	Own	79	Female	Caucasian/White
+129	3	3.333333333	Very Satisfied	Very Likely	Medium				High	Low	High	High	Rent	34	Female	Caucasian/White
+130	3	10	Satisfied	Very Likely	Low	High	High	High	High	Medium	High	High	Own	33	Female	Other
+131	3	31	Satisfied	Likely	Low	High	High	High	High	Medium	High	Low	Own	58	Female	Caucasian/White
+132	3	36	Very Satisfied	Very Likely	Medium	Medium	High	High	High	High	High	High	Own	77	Male	Other
+133	3	21	Very Satisfied	Very Likely	High	High	High	High	High	Low	High	High	Own	71	Male	Caucasian/White
+134	3	6	Very Satisfied	Very Likely	High	High	High	High	High	High	High	High	Own	36	Male	
+135	3	16.33333333	Satisfied	Very Likely	Low	High			High	Medium	High	High	Own	45	Male	Caucasian/White
+136	3	14	Very Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Own	37	Female	Caucasian/White
+137	3	9	Very Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Own	55	Female	Caucasian/White
+138	3	4	Very Satisfied	Likely	Low	High	High	High	High	High	High	High	Own	70	Female	Black/African American
+139	3	6	Very Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Own	34	Male	Caucasian/White
+140	3	4	Satisfied	Likely	Medium	Medium	Medium	Medium	Medium	Low	High	High	Rent	23	Female	Caucasian/White
+141	3	9	Very Satisfied	Very Likely	Medium	High	High	High	Medium	Low	High	High	Rent	33	Female	Black/African American
+142	3	31	Very Satisfied	Very Likely	High		High	High	High	Medium	High	High	Own	72	Female	Caucasian/White
+143	3	16	Satisfied	Very Likely	Medium	High	High	High	Low	Low	High	High	Own	26	Female	Black/African American
+144	3	2	Very Satisfied	Very Likely	Low		High		High	Medium	High	High	Rent	27	Male	Caucasian/White
+145	3	2.5	Very Satisfied	Very Likely	Low	High	High	High	High	High	High	High	Own	17	Male	Other
+146	3	36	Satisfied	Very Likely	Low	High	High	High	High	High	High	High	Own	72	Male	Other
+147	3	1.583333333	Very Satisfied	Likely	Low			High	High	High	High	High	Own	31	Male	Other
+148	3	1	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Own	53	Female	Caucasian/White
+149	3	3.416666667	Very Satisfied	Likely	Medium	High			High	High	High	High	Rent	27	Male	Caucasian/White
+150	3	16.58333333	Very Satisfied	Very Likely	Low	High	High	High	High	Medium	High	High	Own	63	Female	Caucasian/White
+151	3	31	Very Satisfied	Very Likely	High	High	High	High	High	High	High	High	Own	63	Male	Caucasian/White
+152	3	13	Very Satisfied	Likely	Medium	High	High	High	High	Medium	High	Low	Own			
+153	3	31	Dissatisfied	Likely	Medium	Low	High	High	High	Low	High	Low	Own	58	Male	Caucasian/White
+154	3	6.083333333	Very Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Own	27	Female	Caucasian/White
+155	3	7		Very Likely	Medium	High	High	High	High	High	High	High	Own	57	Male	Caucasian/White
+156	3	24	Satisfied	Very Likely	Medium	Medium	Medium	Medium	High	High	High	High	Own	49	Female	Caucasian/White
+157	3	9	Very Satisfied	Very Likely	High	High	High	High	High	High	High	High	Own	43	Male	Black/African American
+158	4	6.333333333	Very Satisfied	Likely	Medium	High			High	Medium	High	Low	Own	27	Male	Caucasian/White
+159	4	30.66666667	Very Satisfied	Likely	Low	High	High	High			High	Low	Own		Female	Black/African American
+160	4	11	Satisfied	Not Likely	Low	Medium	Medium	Medium	Medium	Medium	High	Low	Own	48	Male	Caucasian/White
+161	4	57	Very Satisfied	Likely	Low	High	High	High	High	High	High	High	Own		Male	Caucasian/White
+162	4	8	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Rent	27	Female	
+163	4	2	Satisfied	Likely	Low	High	High	High		Medium	High	High	Rent	34	Male	Caucasian/White
+164	4	1.083333333	Very Satisfied	Very Likely	Low						High	High	Rent	50	Male	Caucasian/White
+165	4	21	Very Satisfied	Very Likely	Low				Medium		High	Low	Own	74	Female	Caucasian/White
+166	4	3.166666667	Very Satisfied	Very Likely	Medium	High	High	High	High	Medium	High	High	Own	31	Male	Caucasian/White
+167	4	3	Very Satisfied	Likely	Medium	High	High	High	High	High	High	High	Rent	21	Male	Caucasian/White
+168	4	9	Very Satisfied	Likely	Medium	Medium	Medium	Medium	High	Medium	High	High	Own	44	Male	Caucasian/White
+169	4	1.166666667	Satisfied	Very Likely	Low	Medium	High	High	Medium		High	High	Rent	33	Male	Caucasian/White
+170	4	1.166666667	Satisfied	Very Likely	Medium	Medium	High	High	Medium	Low	High	High	Rent	26	Female	Caucasian/White
+171	4	34	Satisfied	Likely	Low	High	High	High	High	High	High	High	Own	67	Female	Caucasian/White
+172	4	5	Very Satisfied	Very Likely	Medium	High	High		High	High	High	High	Rent	22	Female	Caucasian/White
+173	4	11	Very Satisfied	Very Likely	Medium	High	High	Medium	High	Low	High	High	Own	57	Male	Caucasian/White
+174	4	16	Very Satisfied	Very Likely	Low	Low	High	High	High	Low	High	High	Other	54	Male	Caucasian/White
+175	4	9	Very Satisfied	Likely	Low	High	High	High	High	High	High	High	Other	26	Male	Caucasian/White
+176	4	16	Very Satisfied	Very Likely	Medium				High		High	Low	Own	49	Male	Caucasian/White
+177	4	1.083333333	Satisfied	Very Likely	Low				High		High	High	Own	34	Male	Caucasian/White
+178	4	13	Satisfied	Very Likely	High	High			High	Low	High	High	Rent	74	Male	Caucasian/White
+179	4	7.333333333	Very Satisfied	Likely	Medium	High			High	High	High	High	Own	36	Female	Caucasian/White
+180	4	3	Dissatisfied	Likely	Medium				High	High	High	Low	Own	36	Female	Caucasian/White
+181	4	22	Very Satisfied	Very Likely	Low	High	High	High	High	Low	High	Low	Own	66	Male	Caucasian/White
+182	4	7	Very Satisfied	Very Likely	Medium	High	High	High	High	High	High	High	Own	40	Male	Caucasian/White
+183	4	6	Very Satisfied	Likely	Medium	High	High	High	High		High	High	Own	43	Male	Caucasian/White
+184	4	1.25	Very Satisfied	Very Likely	Low				High	High	High	High	Rent	33	Female	Caucasian/White
+185	4	16	Very Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Own	53	Male	Caucasian/White
+186	4	11	Very Satisfied	Very Likely	Medium	High	High	High	High	Low	High	High	Own	42	Male	Caucasian/White
+187	4	9	Satisfied	Very Likely	Medium	High	High		High	Medium	High	High	Rent	54	Female	Caucasian/White
+188	4	15	Very Satisfied	Very Likely	Low	High	High	High	High		High	High	Own	44	Female	Caucasian/White
+189	4	16	Satisfied	Very Likely	High				High	High	High	High	Own	34	Male	Other
+190	4	8	Very Satisfied	Likely	Low				Medium	Medium	High	High	Own	48	Male	Caucasian/White
+191	4	16	Very Satisfied	Very Likely	Low		High	High	High		High	High	Rent	55	Female	Black/African American
+192	4	24.5	Satisfied	Likely	Medium	High	High	High	High	High	High	High	Own	64	Male	Caucasian/White
+193	4	10	Satisfied	Very Likely	Medium	Low	High		High	High	High	Low	Rent	35	Female	Caucasian/White
+194	4	5	Very Satisfied	Not Likely	Medium				High	Medium	High	High	Own	33	Female	Caucasian/White
+195	4	4	Very Satisfied	Very Likely	Medium				High	High	High	High	Rent	33	Male	Other
+196	4	5.5	Very Satisfied	Very Likely	Low	High	High	High	High	High	High	High	Rent	34	Female	Caucasian/White
+197		4.166666667	Very Satisfied	Very Likely	Medium	High	High		High	Medium	High	Low	Rent			
+198		3	Satisfied	Very Likely	Medium	Medium	High	High	Medium	Medium	High	Low	Own		Male	Caucasian/White
+199		14	Satisfied	Likely	Low	High	High	High			High	Low			Female	
+200		36	Satisfied	Likely	Medium	High	High	High	High		High	High	Own	72	Female	Caucasian/White
+	196	200	197	199	197	173	151	144	194	180	199	199	197	185	191	181
+	0.98	1	0.985	0.995	0.985	0.865	0.755	0.72	0.97	0.9	0.995	0.995	0.985	0.925	0.955	0.905
