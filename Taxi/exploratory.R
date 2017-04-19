@@ -6,7 +6,7 @@ library(reshape)
 library(ggplot2)
 library(ggmap)
 
-dta = read.sas7bdat("~/Projects/neighbor-works/data/taxi_sample.sas7bdat")
+dta = read.sas7bdat("data/taxi_sample.sas7bdat")
 dta$TIP = ifelse(dta$TIP_AMOUNT > 0, 1, 0)
 dta$TOLL = ifelse(dta$TOLLS_AMOUNT > 0, 1, 0)
 
@@ -23,17 +23,38 @@ cab$tip_pct = with(cab, tip_amount/fare_amount)
 
 ## Univariate Summaries of variables
 cab.counts = list(
-  month = ddply(cab, .(month), summarise, prop_tip = sum(tip)/10000),
-  vendor_id = ddply(cab, .(vendor_id), summarise, prop_tip = sum(tip)/length(tip)),
-  pickup_time = ddply(cab, .(hour = round_any(pickup_time, 1, floor)), summarise, prop_tip = sum(tip)/length(tip)),
-  passenger_count = ddply(cab, .(passenger_count), summarise, prop_tip = sum(tip)/length(tip), count = length(tip)),
-  trip_distance = ddply(cab, .(trip_distance = round_any(trip_distance, 1, ceiling)), summarise, 
-                        prop_tip = sum(tip)/length(tip), count = length(tip)),
-  payment_type = ddply(cab, .(payment_type), summarise, prop_tip = sum(tip)/length(tip), count = length(tip)),
-  fare_amount = ddply(cab, .(fare_amount = round_any(fare_amount, 10, floor)), summarise, 
-                      prop_tip = sum(tip)/length(tip), count = length(tip)),
-  toll = ddply(cab, .(toll), summarise, prop_tip = sum(tip)/length(tip), count = length(tip)),
-  tip_pct = ddply(cab, .(tip_pct = round_any(tip_pct, .05, ceiling)), summarise, count = length(tip)))
+  month = ddply(cab, .(month), 
+                summarise, 
+                prop_tip = sum(tip)/10000),
+  vendor_id = ddply(cab, .(vendor_id), 
+                    summarise, 
+                    prop_tip = sum(tip)/length(tip)),
+  pickup_time = ddply(cab, .(hour = round_any(pickup_time, 1, floor)), 
+                      summarise, 
+                      prop_tip = sum(tip)/length(tip)),
+  passenger_count = ddply(cab, .(passenger_count), 
+                          summarise, 
+                          prop_tip = sum(tip)/length(tip), 
+                          count = length(tip)),
+  trip_distance = ddply(cab, .(trip_distance = round_any(trip_distance, 1, ceiling)), 
+                        summarise, 
+                        prop_tip = sum(tip)/length(tip),
+                        count = length(tip)),
+  payment_type = ddply(cab, .(payment_type), 
+                       summarise, 
+                       prop_tip = sum(tip)/length(tip), 
+                       count = length(tip)),
+  fare_amount = ddply(cab, .(fare_amount = round_any(fare_amount, 10, floor)), 
+                      summarise, 
+                      prop_tip = sum(tip)/length(tip), 
+                      count = length(tip)),
+  toll = ddply(cab, .(toll), 
+               summarise, 
+               prop_tip = sum(tip)/length(tip), 
+               count = length(tip)),
+  tip_pct = ddply(cab, .(tip_pct = round_any(tip_pct, .05, ceiling)), 
+                  summarise, 
+                  count = length(tip)))
 
 ## Apply some constraints to the outliers
 cab = subset(cab, passenger_count > 0 & 
@@ -44,41 +65,6 @@ cab = subset(cab, passenger_count > 0 &
 
 ## Round time to 1 hour
 cab$dropoff_time_round = round_any(cab$dropoff_time, 4, floor)
-
-## Test model
-row.names(cab) = 1:nrow(cab)
-mdl = glm(log(tip_amount+1) ~ month + vendor_id + pickup_time + passenger_count + log(trip_distance) + log(fare_amount) + toll, data = cab)
-
-
-## Get Map of NYC
-nyc1 = get_map(location = c(lon = -73.98, lat = 40.75), zoom = 13, color = "bw")
-
-## Map of pickup densities
-ggmap(nyc1) +
-  stat_density2d(aes(x = pickup_longitude, y = pickup_latitude, fill = ..level.., alpha = ..level..),
-                 bins = 5, geom = "polygon", data = cab) +
-  facet_wrap(~tip) +
-  scale_fill_continuous(guide = FALSE) +
-  scale_alpha_continuous(guide = FALSE) +
-  ggtitle("Tip Distribution") +
-  theme(axis.text = element_blank(),
-        axis.ticks = element_blank(),
-        axis.title = element_blank(),
-        plot.title = element_text(hjust = .5))
-
-## Map of pickup densities by hour
-ggmap(nyc) +
-  stat_density2d(aes(x = pickup_longitude, y = pickup_latitude, fill = ..level.., alpha = ..level..),
-                 bins = 5, geom = "polygon", data = cab) +
-  facet_grid(tip~dropoff_time_round) +
-  scale_fill_continuous(guide = FALSE) +
-  scale_alpha_continuous(guide = FALSE) +
-  ggtitle("Tip Distribution", subtitle = "(Tip by 4 Hour Segment)") +
-  theme(axis.text = element_blank(),
-        axis.ticks = element_blank(),
-        axis.title = element_blank(),
-        plot.title = element_text(hjust = .5),
-        plot.subtitle = element_text(hjust = .5))
 
 
 ## Move map to the right to cover the data area
@@ -92,6 +78,7 @@ cab2 = subset(cab, dropoff_longitude > -74.03 & dropoff_longitude < -73.75 &
                 pickup_longitude > -74.03 & pickup_longitude < -73.75)
 cab2 = subset(cab2, dropoff_latitude > 40.6 & dropoff_latitude < 40.9 &
                 pickup_latitude > 40.6 & pickup_latitude < 40.9)
+
 
 ## KMeans  on Pickup Locations
 k = kmeans(x = cab2[, c("pickup_latitude", "pickup_longitude")], centers = 50)
@@ -126,26 +113,70 @@ i.cen$dropoffID = 1:50
 cab2$pickupID = k$cluster
 cab2$dropoffID = i$cluster
 
+## Clean up column names
+colnames(k.cen) = c("pickup_lat_cen", "pickup_lon_cen", "pickup_location", "pickupID")
+k.cen$pickup_location_id = paste('P', k.cen$pickupID, sep = "")
+
+colnames(i.cen) = c("dropoff_lat_cen", "dropoff_lon_cen", "dropoff_location", "dropoffID")
+i.cen$dropoff_location_id = paste('D', i.cen$dropoffID, sep = "")
+
+cab2$pickup_time = round_any(cab2$pickup_time, accuracy = 1, f = floor)
+cab2$dropoff_time = round_any(cab2$dropoff_time, accuracy = 1, f = floor)
+
+colnames(cab2)[9:10] = c("tip_ind", "toll_ind")
+
+cab.final = cab2[, c("month", "pickup_time", "dropoff_time", "passenger_count", "trip_distance",
+                     "fare_amount", "tip_amount", "tip_pct", "tip_ind", "toll_ind", 
+                     "pickup_longitude", "pickup_latitude", "dropoff_longitude", "dropoff_latitude",
+                     "pickupID", "dropoffID")]
+
+cab.final = join(cab.final, k.cen)
+cab.final = join(cab.final, i.cen)
+
+cab.final = cab.final[, -(15:16)]
+
+save("cab.final", file = "data/prepped_cab_data.rda")
+write.csv(cab.final, file = "data/cab_final.csv", row.names = FALSE)
+
+################################################################################
+
+
 
 ## KMeans with Dropoff data
 ggmap(nyc2) +
-  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude), data = cab2, alpha = .05) +
-  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude), data = i.cen, color = "red") +
+  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude), data = cab.final, alpha = .05) +
+  geom_point(aes(x = dropoff_lon_cen, y = dropoff_lat_cen), data = cab.final, color = "red") +
   ggtitle("Data with KMeans Centers")
 
+library(gridExtra)
+
+
 ## Centers for Pickup Data
-ggmap(nyc2) +
-  geom_point(aes(x = pickup_longitude, y = pickup_latitude, color = factor(pickupID)), data = cab2, alpha = .2) +
-  geom_point(aes(x = pickup_longitude, y = pickup_latitude), data = k.cen, color = "red") +
+g1 = ggmap(nyc2) +
+  geom_point(aes(x = pickup_longitude, y = pickup_latitude, color = pickup_location_id), 
+             data = cab.final, alpha = .05) +
+  geom_point(aes(x = pickup_lon_cen, y = pickup_lat_cen), data = cab.final) +
   scale_color_discrete(guide = FALSE) +
-  ggtitle("KMeans Assignment for Pickup Locations")
+  ggtitle("KMeans Clusters for Pickup Locations") +
+  theme(plot.title = element_text(hjust = .5),
+        axis.text = element_blank(),
+        axis.title = element_blank(),
+        axis.ticks = element_blank())
 
 
 ## Centers for Dropoff Data
-ggmap(nyc2) +
-  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude, color = factor(dropoffID)), data = cab2, alpha = .2) +
-  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude), data = i.cen, color = "red") +
+g2 = ggmap(nyc2) +
+  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude, color = dropoff_location_id), 
+             data = cab.final, alpha = .05) +
+  geom_point(aes(x = dropoff_lon_cen, y = dropoff_lat_cen), 
+             data = cab.final) +
   scale_color_discrete(guide = FALSE) +
-  ggtitle("KMeans Assignment for Dropoff Locations")
+  ggtitle("KMeans Clusters for Dropoff Locations") +
+  theme(plot.title = element_text(hjust = .5),
+        axis.text = element_blank(),
+        axis.title = element_blank(),
+        axis.ticks = element_blank())
 
+grid.arrange(g1, g2, nrow = 1)
 
+ggsave(filename = "Taxi/Plots/KMeans.png")
