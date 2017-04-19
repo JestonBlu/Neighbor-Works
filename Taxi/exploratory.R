@@ -42,15 +42,19 @@ cab = subset(cab, passenger_count > 0 &
                fare_amount <= 100 & fare_amount > 0 &
                tip_pct >= 0 & tip_pct <= 1)
 
+## Round time to 1 hour
 cab$dropoff_time_round = round_any(cab$dropoff_time, 4, floor)
 
+## Test model
 row.names(cab) = 1:nrow(cab)
-
 mdl = glm(log(tip_amount+1) ~ month + vendor_id + pickup_time + passenger_count + log(trip_distance) + log(fare_amount) + toll, data = cab)
 
-nyc = get_map(location = c(lon = -73.98, lat = 40.75), zoom = 13, color = "bw")
 
-ggmap(nyc) +
+## Get Map of NYC
+nyc1 = get_map(location = c(lon = -73.98, lat = 40.75), zoom = 13, color = "bw")
+
+## Map of pickup densities
+ggmap(nyc1) +
   stat_density2d(aes(x = pickup_longitude, y = pickup_latitude, fill = ..level.., alpha = ..level..),
                  bins = 5, geom = "polygon", data = cab) +
   facet_wrap(~tip) +
@@ -62,6 +66,7 @@ ggmap(nyc) +
         axis.title = element_blank(),
         plot.title = element_text(hjust = .5))
 
+## Map of pickup densities by hour
 ggmap(nyc) +
   stat_density2d(aes(x = pickup_longitude, y = pickup_latitude, fill = ..level.., alpha = ..level..),
                  bins = 5, geom = "polygon", data = cab) +
@@ -76,12 +81,71 @@ ggmap(nyc) +
         plot.subtitle = element_text(hjust = .5))
 
 
+## Move map to the right to cover the data area
+nyc2 = get_map(location = c(lon = -73.9, lat = 40.75), zoom = 11, color = "bw")
+
+## Trim some bad locations
+cab = subset(cab, pickup_longitude < 0 & dropoff_longitude < 0)
+
+## Get rid of the outlier locations
+cab2 = subset(cab, dropoff_longitude > -74.03 & dropoff_longitude < -73.75 &
+                pickup_longitude > -74.03 & pickup_longitude < -73.75)
+cab2 = subset(cab2, dropoff_latitude > 40.6 & dropoff_latitude < 40.9 &
+                pickup_latitude > 40.6 & pickup_latitude < 40.9)
+
+## KMeans  on Pickup Locations
+k = kmeans(x = cab2[, c("pickup_latitude", "pickup_longitude")], centers = 50)
+k.cen = as.data.frame(k$centers)
+
+pickup.centers = c()
+
+for (i in 1:nrow(k.cen)) {
+  z = revgeocode(location = c(k.cen$pickup_longitude[i], k.cen$pickup_latitude[i]))
+  pickup.centers = c(pickup.centers, z)
+}
+
+k.cen$pickup.centers = pickup.centers
+k.cen$pickupID = 1:50
+
+## KMeans on Dropoff locations
+i = kmeans(x = cab2[, c("dropoff_latitude", "dropoff_longitude")], centers = 50)
+i.cen = as.data.frame(i$centers)
+
+dropoff.centers = c()
+
+for (m in 1:nrow(i.cen)) {
+  z = revgeocode(location = c(i.cen$dropoff_longitude[m], i.cen$dropoff_latitude[m]))
+  dropoff.centers = c(dropoff.centers, z)
+}
+
+i.cen$dropoff.centers = dropoff.centers
+i.cen$dropoffID = 1:50
 
 
+## Add the clusters so the data
+cab2$pickupID = k$cluster
+cab2$dropoffID = i$cluster
 
 
+## KMeans with Dropoff data
+ggmap(nyc2) +
+  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude), data = cab2, alpha = .05) +
+  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude), data = i.cen, color = "red") +
+  ggtitle("Data with KMeans Centers")
+
+## Centers for Pickup Data
+ggmap(nyc2) +
+  geom_point(aes(x = pickup_longitude, y = pickup_latitude, color = factor(pickupID)), data = cab2, alpha = .2) +
+  geom_point(aes(x = pickup_longitude, y = pickup_latitude), data = k.cen, color = "red") +
+  scale_color_discrete(guide = FALSE) +
+  ggtitle("KMeans Assignment for Pickup Locations")
 
 
-
+## Centers for Dropoff Data
+ggmap(nyc2) +
+  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude, color = factor(dropoffID)), data = cab2, alpha = .2) +
+  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude), data = i.cen, color = "red") +
+  scale_color_discrete(guide = FALSE) +
+  ggtitle("KMeans Assignment for Dropoff Locations")
 
 
