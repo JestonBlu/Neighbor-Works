@@ -14,7 +14,7 @@ colnames(dta) = casefold(colnames(dta))
 
 cab = dta[, c("month", "vendor_id", "pickup_time", "passenger_count", "trip_distance", "dropoff_time",
               "payment_type", "fare_amount", "tip", "toll", "tip_amount", "dropoff_longitude", "dropoff_latitude",
-              "pickup_longitude", "pickup_latitude")]
+              "pickup_longitude", "pickup_latitude", "rate_code")]
 
 cab$pickup_time = cab$pickup_time / 60 / 60
 cab$dropoff_time = cab$dropoff_time / 60 / 60
@@ -126,29 +126,19 @@ cab2$dropoff_time = round_any(cab2$dropoff_time, accuracy = 1, f = floor)
 colnames(cab2)[9:10] = c("tip_ind", "toll_ind")
 
 cab.final = cab2[, c("month", "pickup_time", "dropoff_time", "passenger_count", "trip_distance",
-                     "fare_amount", "tip_amount", "tip_pct", "tip_ind", "toll_ind", 
+                     "fare_amount", "tip_amount", "tip_pct", "tip_ind", "toll_ind", "rate_code", 
                      "pickup_longitude", "pickup_latitude", "dropoff_longitude", "dropoff_latitude",
                      "pickupID", "dropoffID")]
 
 cab.final = join(cab.final, k.cen)
 cab.final = join(cab.final, i.cen)
 
-cab.final = cab.final[, -(15:16)]
+cab.final = cab.final[, -(16:17)]
 
 save("cab.final", file = "data/prepped_cab_data.rda")
 write.csv(cab.final, file = "data/cab_final.csv", row.names = FALSE)
 
 ################################################################################
-
-
-
-## KMeans with Dropoff data
-ggmap(nyc2) +
-  geom_point(aes(x = dropoff_longitude, y = dropoff_latitude), data = cab.final, alpha = .05) +
-  geom_point(aes(x = dropoff_lon_cen, y = dropoff_lat_cen), data = cab.final, color = "red") +
-  ggtitle("Data with KMeans Centers")
-
-library(gridExtra)
 
 
 ## Centers for Pickup Data
