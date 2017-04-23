@@ -22,39 +22,39 @@ cab$tip_pct = with(cab, tip_amount/fare_amount)
 
 
 ## Univariate Summaries of variables
-cab.counts = list(
-  month = ddply(cab, .(month), 
-                summarise, 
-                prop_tip = sum(tip)/10000),
-  vendor_id = ddply(cab, .(vendor_id), 
-                    summarise, 
-                    prop_tip = sum(tip)/length(tip)),
-  pickup_time = ddply(cab, .(hour = round_any(pickup_time, 1, floor)), 
-                      summarise, 
-                      prop_tip = sum(tip)/length(tip)),
-  passenger_count = ddply(cab, .(passenger_count), 
-                          summarise, 
-                          prop_tip = sum(tip)/length(tip), 
-                          count = length(tip)),
-  trip_distance = ddply(cab, .(trip_distance = round_any(trip_distance, 1, ceiling)), 
-                        summarise, 
-                        prop_tip = sum(tip)/length(tip),
-                        count = length(tip)),
-  payment_type = ddply(cab, .(payment_type), 
-                       summarise, 
-                       prop_tip = sum(tip)/length(tip), 
-                       count = length(tip)),
-  fare_amount = ddply(cab, .(fare_amount = round_any(fare_amount, 10, floor)), 
-                      summarise, 
-                      prop_tip = sum(tip)/length(tip), 
-                      count = length(tip)),
-  toll = ddply(cab, .(toll), 
-               summarise, 
-               prop_tip = sum(tip)/length(tip), 
-               count = length(tip)),
-  tip_pct = ddply(cab, .(tip_pct = round_any(tip_pct, .05, ceiling)), 
-                  summarise, 
-                  count = length(tip)))
+# cab.counts = list(
+#   month = ddply(cab, .(month), 
+#                 summarise, 
+#                 prop_tip = sum(tip)/10000),
+#   vendor_id = ddply(cab, .(vendor_id), 
+#                     summarise, 
+#                     prop_tip = sum(tip)/length(tip)),
+#   pickup_time = ddply(cab, .(hour = round_any(pickup_time, 1, floor)), 
+#                       summarise, 
+#                       prop_tip = sum(tip)/length(tip)),
+#   passenger_count = ddply(cab, .(passenger_count), 
+#                           summarise, 
+#                           prop_tip = sum(tip)/length(tip), 
+#                           count = length(tip)),
+#   trip_distance = ddply(cab, .(trip_distance = round_any(trip_distance, 1, ceiling)), 
+#                         summarise, 
+#                         prop_tip = sum(tip)/length(tip),
+#                         count = length(tip)),
+#   payment_type = ddply(cab, .(payment_type), 
+#                        summarise, 
+#                        prop_tip = sum(tip)/length(tip), 
+#                        count = length(tip)),
+#   fare_amount = ddply(cab, .(fare_amount = round_any(fare_amount, 10, floor)), 
+#                       summarise, 
+#                       prop_tip = sum(tip)/length(tip), 
+#                       count = length(tip)),
+#   toll = ddply(cab, .(toll), 
+#                summarise, 
+#                prop_tip = sum(tip)/length(tip), 
+#                count = length(tip)),
+#   tip_pct = ddply(cab, .(tip_pct = round_any(tip_pct, .05, ceiling)), 
+#                   summarise, 
+#                   count = length(tip)))
 
 ## Apply some constraints to the outliers
 cab = subset(cab, passenger_count > 0 & 
@@ -95,7 +95,7 @@ k.cen$pickup.centers = pickup.centers
 k.cen$pickupID = 1:50
 
 ## KMeans on Dropoff locations
-i = kmeans(x = cab2[, c("dropoff_latitude", "dropoff_longitude")], centers = 50)
+i = kmeans(x = cab2[, c("dropoff_latitude", "dropoff_longitude")], centers = 50, iter.max = 20)
 i.cen = as.data.frame(i$centers)
 
 dropoff.centers = c()
