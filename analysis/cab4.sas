@@ -1,6 +1,7 @@
 %LET DTA = '\\arpdnas01.nas.cat.com\userdata04\blubaj\cab_final.csv';
-libname out '\\arpdnas01.nas.cat.com\userdata04\blubaj\';
-filename outpdf '\\arpdnas01.nas.cat.com\userdata04\blubaj\best_models_final.pdf';
+
+filename outpdf '\\arpdnas01.nas.cat.com\userdata04\blubaj\Final_Model_Full_Solution.pdf';
+filename outpdf2 '\\arpdnas01.nas.cat.com\userdata04\blubaj\Final_Model_Reduced_Solution.pdf';
 
 proc import datafile=&dta out=cab replace;
 run;
@@ -15,7 +16,6 @@ run;
 
 /* Mixed Model with Random Var Dropoff Locations and Times */
 
-ods output SolutionR = out.RandomEffects;
 ods pdf file=outpdf;
 ods graphics on;
 
@@ -40,9 +40,17 @@ proc glimmix data=cab plots=studentpanel;
 			month*toll_ind*rate_code
 			passenger_count*month*toll_ind*rate_code
                         / ddfm=kr;
-	random pickup_location_id dropoff_location_id pickup_time dropoff_time / ;
+	random pickup_location_id dropoff_location_id pickup_time dropoff_time;
     output out=PRED pred=p resid=r pearson=presid;
 run;
+
+
+ods graphics off;
+ods pdf close;
+
+
+ods pdf file=outpdf2;
+ods graphics on;
 
 title 'Reduced Model';
 proc glimmix data=cab plots=studentpanel;
@@ -58,8 +66,8 @@ proc glimmix data=cab plots=studentpanel;
                         month*toll_ind
                         month*rate_code
                         toll_ind*rate_code
-                        passenger_count*month*toll_ind / ddfm=kr;
-	random pickup_location_id dropoff_location_id dropoff_time / ;
+                        passenger_count*month*toll_ind / ddfm=kr solution;
+	random pickup_location_id dropoff_location_id dropoff_time / solution;
     output out=PRED pred=p resid=r pearson=presid;
 	lsmeans passenger_count / adjust=tukey cl;
 	lsmeans month / adjust=tukey cl;
