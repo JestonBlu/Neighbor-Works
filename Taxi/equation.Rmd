@@ -1,0 +1,27 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+
+\begin{align*}
+\text{Full Model} \\
+y_{ijklmnopq} = & \mu + \beta_1 + \alpha_i + \delta_j + \gamma_k + \theta_l + (\alpha \delta)_{ij} + (\alpha \gamma)_{ik} + \\
+               & (\alpha \theta)_{il} + (\delta \gamma)_{jk} + (\delta \theta)_{jl} + (\gamma \theta)_{kl} + (\alpha \delta \gamma)_{ijk} + \\
+               & (\alpha \delta \theta)_{ijl} + (\alpha \gamma \theta)_{ikl} + (\delta \gamma \theta)_{jkl} + (\alpha \delta \gamma \theta)_{ijkl} + \\
+               & c_m + d_n + f_o + g_p + e_{ijklmnopq} \\
+\\
+\text{Fixed Variables} \\
+\beta_1 = & \text{log(distance)} \\
+\alpha_i = & \text{passenger_count} \\
+\delta_j = & \text{month} \\
+\gamma_k = & \text{toll_ind} \\
+\theta_l = & \text{rate_code} \\
+\\
+\text{Random Variables} \\
+c_m = & \text{pickup_location} \\
+d_n = & \text{dropoff_location} \\
+f_o = & \text{pickup_time} \\
+g_p = & \text{dropoff_time} \\
+e_q = & \text{error} \\
+\end{align*}
